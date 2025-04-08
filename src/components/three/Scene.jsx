@@ -1,0 +1,61 @@
+"use client";
+import {
+  Environment,
+  OrbitControls,
+  PerspectiveCamera,
+} from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import Exp from "./experience/Exp";
+import { Suspense, useState, useEffect } from "react";
+import CameraRig from "./experience/CameraRig";
+import { Logo } from "./experience/model/Logo";
+import TechnoLogo from "./experience/TechnoLogo";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import FireflyCanvas from "@/components/bgEffect/FireflyCanvas";
+
+export default function Scene({ scrollY, scrollY2 }) {
+  const [eventSource, setEventSource] = useState(null);
+
+  useEffect(() => {
+    setEventSource(window);
+  }, []);
+
+  const isMobile = useMediaQuery("(max-width: 768px)", false);
+
+  return (
+    <div className="">
+      <FireflyCanvas />
+
+      <Canvas
+        shadows
+        dpr={[1, 1.5]}
+        gl={{ antialias: false }}
+        // camera={{ position: [0, 0, 2] }}
+        className="canvas"
+        eventSource={eventSource}
+      >
+        <PerspectiveCamera
+          position={[0, 0, 5]}
+          fov={30}
+          makeDefault
+          near={0.1}
+          far={1000}
+        />
+        <Suspense fallback={null}>
+          <CameraRig>
+            <Logo
+              position={[0, isMobile ? 0.1 : -0.2, 0]}
+              scale={isMobile ? 0.3 : 1.3}
+            />
+          </CameraRig>
+          <Exp scrollY={scrollY} />
+          <TechnoLogo scrollY={scrollY2} />
+        </Suspense>
+
+        {/* <OrbitControls /> */}
+        <ambientLight intensity={0.5} />
+        <Environment preset="warehouse" />
+      </Canvas>
+    </div>
+  );
+}
