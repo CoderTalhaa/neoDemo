@@ -77,19 +77,25 @@ const TeamGrid = () => {
       certifications: ["/img/badge2.jpg"],
     },
     {
-      name: "Jeffrey Adamski M.S",
+      name: "Tyler Sookdeo M.S",
       title: "President",
       profilePic: "/img/person3.jpg",
       certifications: ["/img/badge2.jpg"],
     },
     {
-      name: "Tyler Sookdeo M.S",
-     
+      name: "Jeffrey Adamski M.S",
+
       title: "Chief Operating Officer",
       profilePic: "/img/person2.jpg",
-      certifications: ["/img/badge0.png","/img/badge.png","/img/badge3.png","/img/badge4.png", "/img/badge2.jpg", ],
+      certifications: [
+        "/img/badge0.png",
+        "/img/badge.png",
+        "/img/badge3.png",
+        "/img/badge4.png",
+        "/img/badge2.jpg",
+      ],
     },
-   
+
     {
       name: "Jefferson Garcia M.S",
       title: "Vice President",

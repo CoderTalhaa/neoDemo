@@ -2,21 +2,34 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Logo2(props) {
-  const { nodes, materials } = useGLTF("/models/technoLogo.glb");
+  const { nodes, materials } = useGLTF("/models/logo.glb");
 
   const ref = useRef();
 
   return (
     <group {...props} dispose={null} ref={ref}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.polySurface70008.geometry}
-        material={materials["Material_0.003"]}
-        position={[0.064, 0.614, -0.062]}
-      />
+      <group position={[-0.075, 0.363, 0.011]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["polySurface51-mesh-mesh"].geometry}
+          material={materials.Material_2}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["polySurface51-mesh-mesh_1"].geometry}
+          material={materials.Material_1}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["polySurface51-mesh-mesh_2"].geometry}
+          material={materials.Material_0}
+        />
+      </group>
     </group>
   );
 }
 
-useGLTF.preload("/models/technoLogo.glb");
+useGLTF.preload("/models/logo.glb");

@@ -48,7 +48,7 @@ export default function TechnoLogo({ scrollY }) {
   return (
     <group ref={logoRef}>
       <Logo2
-        scale={isMobile ? 0.4 : 0.5}
+        scale={isMobile ? 0.44 : 1}
         position={[0, 0, 0]}
         rotation={[0, 0, 0]}
       />
