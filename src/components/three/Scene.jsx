@@ -45,7 +45,7 @@ export default function Scene({ scrollY, scrollY2 }) {
           <CameraRig>
             <Logo
               position={[0, isMobile ? 0.1 : -0.2, 0]}
-              scale={isMobile ? 0.3 : 1.3}
+              scale={isMobile ? 0.5 : 1.3}
             />
           </CameraRig>
           <Exp scrollY={scrollY} />
